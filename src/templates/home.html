@@ -3,3 +3,11 @@
 {{user}}
 
 {{request.user}}
+
+<form method="POST" accept="">{% csrf_token %}
+
+{{form.as_p}}
+
+<input type="submit" value="Sign Up"/>
+
+</form>
