@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'PytDjango@gmail.com'
+EMAIL_HOST_PASSWORD = 'Pd654321'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 
 # Application definition
 
