@@ -7,7 +7,7 @@ from .forms import ContactForm, SignUpForm
 def home(request):
 	title = 'Welcome'
 	form = SignUpForm(request.POST or None)
-	
+
 	context = {
 		'title': title,
 		'form': form
@@ -20,7 +20,7 @@ def home(request):
 		# full_name = form.cleaned_data.get('full_name')
 		# if not full_name:
 		# 	full_name = 'New Full Name'
-		# instance.full_name = full_name 
+		# instance.full_name = full_name
 
 		# if not instance.full_name:
 		# 		instance.full_name = 'Jasmine'
@@ -30,7 +30,7 @@ def home(request):
 		}
 
 
-	return render(request, "home.html", context)
+	return render(request, "base.html", context)
 
 def contact(request):
 	form = ContactForm(request.POST or None)
@@ -45,15 +45,15 @@ def contact(request):
 		from_email = settings.EMAIL_HOST_USER
 		to_email = [form_email, 'sr@TahaGroups.com', 'PytDjango@gmail.com']
 		contact_message = "%s: %s via %s"%(
-			form_full_name, 
-			form_message, 
+			form_full_name,
+			form_message,
 			form_email)
 		some_html_message = """
 		<h1>Hello</h1>
 		"""
-		send_mail(subject, 
-			contact_message, 
-			from_email, 
+		send_mail(subject,
+			contact_message,
+			from_email,
 			to_email,
 			html_message = some_html_message,
 			fail_silently=False)
