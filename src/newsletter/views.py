@@ -14,7 +14,7 @@ def home(request):
 	}
 
 	if form.is_valid():
-		FORM.SAVE()
+		form.save()
 		# instance = form.save(commit=False)
 
 		# full_name = form.cleaned_data.get('full_name')
