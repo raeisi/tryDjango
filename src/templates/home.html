@@ -2,29 +2,58 @@
 {% load crispy_forms_tags %}
 
 {% block head_title %}Welcom | {{ block.super}} {% endblock %}
+
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
+
 {% block jumbotron_content %}
 
-  <h1>Hello there! example</h1>
-  <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-  <p>To see the difference between static and fixed top navbars, just scroll.</p>
-  <p>
-    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-  </p>
+<div class="row">
+  <div class="col-md-7">
+    <h1 class='lead text-align-center'>Taha Solutions and Services AS</h1>
+    <p class='lead text-align-center'>We are an Engineering and IT Solution provider based in Norway focusing on innovative ideas to increase efficiencies of engineering processes using IT specifically Semantic Web Technologies.</p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="" role="button"> Join Us &raquo;</a>
+    </p>
+  </div>
+  <div class="col-md-5" style="background-color:black; height:300px;">
+
+  </div>
+</div>
 
 {% endblock %}
 
 {% block content %}
 <div class="row">
-  <div class="col-sm-6 col-md-3">
-    <h1>{{title}}</h1>
 
-    <form method="POST" action="">{% csrf_token %}
+  <div class="col-sm-3 pull-right">
 
-    {{ form|crispy }}
+      <p class='lead text-align-center'>{{ title }}</p>
 
-    <input class= 'btn btn-primary' type="submit" value="Sign Up"/>
+      <form method='POST' action=''>{% csrf_token %}
+      {{ form|crispy }}
 
-    </form>
+      <input class='btn btn-primary' type='submit' value='Sign Up' />
+
+      </form>
   </div>
+
+  <div class='col-sm-3'>
+<p class='lead text-align-center'>Taha Electronics</p>
+</div>
+
+<div class='col-sm-3'>
+<p class='lead text-align-center'>Taha Semantic Web Technolies</p>
+</div>
+
+<div class='col-sm-3'>
+<p class='lead text-align-center'>Taha Engineering</p>
+</div>
+
+
 </div>
     {% endblock %}
