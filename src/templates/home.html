@@ -1,53 +1,67 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}Welcom | {{ block.super}} {% endblock %}
+
+
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
 
 <style>
 {% block style %}
+.navbar-static-top {
+	margin-bottom: 0px !important;
+}
+
+.jumbotron {
+	background-color:red;
+	color: #FFF;
+}
 
 {% endblock %}
 </style>
 
 
-{% block jumbotron_content %}
 
-<div class="row">
-  <div class="col-md-7">
-    <h1 class='lead text-align-center'>Taha Electronics</h1>
-    <p class='lead text-align-center'>We are One-Stop Shop for Electronics products from PSB and PCBA services and sourcing components for your production to source finished off the shelf Electronics like TV and Monitors, Computer and Servers or Telecom and Automation products  </p>
-    <p>
-      <a class="btn btn-lg btn-primary" href="" role="button"> Get a Quote &raquo;</a>
-    </p>
-  </div>
-  <div class="col-md-5" style="background-color:black; height:300px;">
+{% block jumbotron %}
 
-  </div>
+<div class="jumbotron">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+		    <h1 class='lead text-align-center'>Taha Electronics</h1>
+		    <p class='lead text-align-center'>We are One-Stop Shop for Electronics products from PSB and PCBA services and sourcing components for your production to source finished off the shelf Electronics like TV and Monitors, Computer and Servers or Telecom and Automation products  </p>
+		    <p>
+		      <a class="btn btn-lg btn-primary" href="" role="button"> Get a Quote &raquo;</a>
+		    </p>
+		</div>
+		<div class="col-md-5" style="background-color:black; height:300px;">
+		</div>
+	</div>
+	</div>
 </div>
-
 {% endblock %}
+
 
 {% block content %}
 <div class="row">
 
   <div class="col-sm-3 pull-right">
 
-      <p class='lead text-align-center'>{{ title }}</p>
+			<p class='lead text-align-center'>{{ title }}</p>
 
-      <form method='POST' action=''>{% csrf_token %}
-      {{ form|crispy }}
+			<form method='POST' action=''>{% csrf_token %}
+			{{ form|crispy }}
 
-      <input class='btn btn-primary' type='submit' value='Sign Up' />
+			<input class='btn btn-primary' type='submit' value='Sign Up' />
 
-      </form>
-  </div>
+			</form>
+	</div>
 
-  <div class='col-sm-3'>
+	<div class='col-sm-3'>
 <p class='lead text-align-center'>Electronics Components, PCB and PCBA</p>
 </div>
 
 <div class='col-sm-3'>
-<p class='lead text-align-center'>Computer and Server</p>
+<p class='lead text-align-center'>CComputer and Server</p>
 </div>
 
 <div class='col-sm-3'>
@@ -56,4 +70,6 @@
 
 
 </div>
-    {% endblock %}
+
+
+{% endblock %}

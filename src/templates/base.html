@@ -11,42 +11,39 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>{% block head_title %}MPV Landing{% endblock %} </title>
+    <title>{% block head_title %}Taha Electronics{% endblock %}</title>
 
     {% include 'head_css.html' %}
 
       <style>
-        {% block style %}
-
-        {% endblock %}
+      {% block style %}{% endblock %}
       </style>
 
-    </head>
+
+
+  </head>
 
   <body>
-
   {% include 'navbar.html' %}
 
+{% block jumbotron %}
 
+            {% endblock %}
     <div class="container">
 
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-
-      {% block jumbotron_content %}
-
-      {% endblock %}
-
-    </div>
 
 
-    {% block content %}
 
-    {% endblock %}
+
+            {% block content %}
+
+            {% endblock %}
+
 
     </div> <!-- /container -->
 
-  {% include 'javascript.html' %}
+    {% include "javascript.html" %}
+
 
   </body>
 </html>
