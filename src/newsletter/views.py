@@ -28,10 +28,7 @@ def home(request):
 			"title": "Thank you"
 		}
 
-
 	return render(request, "home.html", context)
-
-
 
 def contact(request):
 	title = 'Contact Us'
@@ -48,7 +45,7 @@ def contact(request):
 		subject = 'Site contact form'
 		from_email = settings.EMAIL_HOST_USER
 		to_email = [from_email, 'sr@TahaGroups.com']
-		contact_message = "%s: %s via %s"%(
+		contact_message = "%s: %s via %s" % (
 				form_full_name,
 				form_message,
 				form_email)
@@ -56,11 +53,11 @@ def contact(request):
 		<h1>hello</h1>
 		"""
 		send_mail(subject,
-				contact_message,
-				from_email,
-				to_email,
-				html_message=some_html_message,
-				fail_silently=False)
+			contact_message,
+			from_email,
+			to_email,
+			html_message=some_html_message,
+			fail_silently=False)
 
 	context = {
 		"form": form,
