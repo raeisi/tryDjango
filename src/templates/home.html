@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load staticfiles%}
 
 
 
@@ -26,14 +27,18 @@
 <div class="jumbotron">
 	<div class="container">
 	<div class="row">
-		<div class="col-md-7">
+		<div class="col-md-9">
 		    <h1 class='lead text-align-center'>Taha Electronics</h1>
-		    <p class='lead text-align-center'>We are One-Stop Shop for Electronics products from PSB and PCBA services and sourcing components for your production to source finished off the shelf Electronics like TV and Monitors, Computer and Servers or Telecom and Automation products  </p>
+		    <p class='lead text-align-center'>Taha Electronics is a One-Stop Shop for Electronics products from PCB and PCBA and sourcing electronic components to source finished off the shelf Electronics devices and equipments such as TV and Monitors, Computers, Servers and also Telecom and Automation products.
+		    </p>
 		    <p>
 		      <a class="btn btn-lg btn-primary" href="" role="button"> Get a Quote &raquo;</a>
 		    </p>
 		</div>
-		<div class="col-md-5" style="background-color:black; height:300px;">
+		<div class="col-md-3">
+		<a href="http://tahagroups.trustpass.alibaba.com/productlist.html">
+		<p class='lead text-align-center'><img src="{% static 'img/Alibaba-final-small.jpg'%}"></p>
+		</a>
 		</div>
 	</div>
 	</div>
@@ -44,30 +49,30 @@
 {% block content %}
 <div class="row">
 
-  <div class="col-sm-3 pull-right">
-
-			<p class='lead text-align-center'>{{ title }}</p>
-
-			<form method='POST' action=''>{% csrf_token %}
-			{{ form|crispy }}
-
-			<input class='btn btn-primary' type='submit' value='Sign Up' />
-
-			</form>
-	</div>
-
 	<div class='col-sm-3'>
-<p class='lead text-align-center'>Electronics Components, PCB and PCBA</p>
+<p class='lead text-align-center'>PCB and PCBA</p>
+<!--<a href="http://tahagroups.trustpass.alibaba.com/productlist.html"> -->
+		<p class='lead text-align-center'><img src="{% static 'img/PCB.jpg'%}"></p>
+	<!--	</a>  -->
 </div>
 
 <div class='col-sm-3'>
-<p class='lead text-align-center'>CComputer and Server</p>
+<p class='lead text-align-center'>Computer and Server</p>
+<p class='lead text-align-center'><img src="{% static 'img/Server.jpg'%}"></p>
 </div>
 
 <div class='col-sm-3'>
-<p class='lead text-align-center'>Telecom and Automation Products</p>
+<p class='lead text-align-center'>Telecom and Automation</p>
+<p class='lead text-align-center'><img src="{% static 'img/Automation.png'%}"></p>
 </div>
 
+	<div class="col-sm-3">
+		<p class='lead text-align-center'>Become a Supplier</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ form|crispy }}
+			<input class='btn btn-primary' type='submit' value='Sign Up' />
+		</form>
+	</div>
 
 </div>
 
